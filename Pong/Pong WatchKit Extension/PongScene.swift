@@ -58,6 +58,17 @@ final class PongScene: SKScene {
     } else if ball.position.x >= rightPaddle.position.x {
       scored(winner: .left)
     }
+
+    let newPostion = crownPosition
+
+    defer { previousCrownPosition = newPostion }
+    guard newPostion != previousCrownPosition else { return }
+
+    let offset = newPostion - previousCrownPosition
+    let y = paddleBeingMoved.position.y + offset
+    guard minPaddleY ... maxPaddleY ~= y else { return }
+    
+    paddleBeingMoved.position.y = y
   }
 }
 
