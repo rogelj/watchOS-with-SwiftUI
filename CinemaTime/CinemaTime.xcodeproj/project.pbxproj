@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46130D5C292D2446009FA74D /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46130D5B292D2446009FA74D /* Delivery.swift */; };
+		46130D5D292D2446009FA74D /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46130D5B292D2446009FA74D /* Delivery.swift */; };
 		469803C52927A8A3006089DB /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469803C42927A8A3006089DB /* Connectivity.swift */; };
 		469803C62927A8A3006089DB /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469803C42927A8A3006089DB /* Connectivity.swift */; };
 		D258D5DD2637297E00178F43 /* ConnectivityUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F435EB26350F3E00EBF172 /* ConnectivityUserInfoKey.swift */; };
@@ -90,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46130D5B292D2446009FA74D /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		469803C42927A8A3006089DB /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		D2B78A302634B545009E3B39 /* CinemaTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B78A332634B545009E3B39 /* CinemaTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaTimeApp.swift; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				D2F435102634BE7200EBF172 /* PurchaseTicketView.swift */,
 				D2F435EB26350F3E00EBF172 /* ConnectivityUserInfoKey.swift */,
 				469803C42927A8A3006089DB /* Connectivity.swift */,
+				46130D5B292D2446009FA74D /* Delivery.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -376,6 +380,7 @@
 				D2F434FD2634BDE400EBF172 /* MovieListView.swift in Sources */,
 				D2F435072634BE3100EBF172 /* QRCodeView.swift in Sources */,
 				D2B78A342634B545009E3B39 /* CinemaTimeApp.swift in Sources */,
+				46130D5C292D2446009FA74D /* Delivery.swift in Sources */,
 				D2F435022634BE0C00EBF172 /* MovieDetailsView.swift in Sources */,
 				D2B78A722634B5CF009E3B39 /* Movie.swift in Sources */,
 				469803C52927A8A3006089DB /* Connectivity.swift in Sources */,
@@ -398,6 +403,7 @@
 				D2F434F82634BDBF00EBF172 /* Color+Extension.swift in Sources */,
 				D2B78A532634B549009E3B39 /* CinemaTimeApp.swift in Sources */,
 				D2F434E32634BD7200EBF172 /* Movie.swift in Sources */,
+				46130D5D292D2446009FA74D /* Delivery.swift in Sources */,
 				D2F434E42634BD7200EBF172 /* TicketOffice.swift in Sources */,
 				D2F435752634D79F00EBF172 /* MovieDetailsView.swift in Sources */,
 				D2F435EC26350F3E00EBF172 /* ConnectivityUserInfoKey.swift in Sources */,

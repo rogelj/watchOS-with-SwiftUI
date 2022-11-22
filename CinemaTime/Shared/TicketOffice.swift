@@ -90,7 +90,10 @@ final class TicketOffice: NSObject, ObservableObject {
     let ids = purchased.map { $0.id }
 
       // 2
-    Connectivity.shared.send(movieIds: ids)
+    Connectivity.shared
+      .send(movieIds: ids, delivery: .highPriority, errorHandler: {
+        print($0.localizedDescription)
+      })
   }
 }
 
