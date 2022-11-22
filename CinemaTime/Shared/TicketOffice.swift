@@ -35,6 +35,22 @@ final class TicketOffice: NSObject, ObservableObject {
     purchased = movies.filter { alreadyPurchasedIds.contains($0.id) }
 
     super.init()
+
+      // 1
+    Connectivity.shared.$purchasedIds
+      // 2
+      .dropFirst()
+      // 3
+      .map { ids in
+        movies.filter { ids.contains($0.id) }
+      }
+      // 4
+      .receive(on: DispatchQueue.main)
+      // 5
+      .assign(to: \.purchased, on: self)
+      //6
+      .store(in: &cancellable)
+
   }
 
   static func purchasedListPreview() -> TicketOffice {
@@ -54,6 +70,8 @@ final class TicketOffice: NSObject, ObservableObject {
     }
 
     purchased.append(movie)
+
+    updateCompanion()
   }
 
   func purchasableMovies() -> [String: [Movie]] {
@@ -63,5 +81,17 @@ final class TicketOffice: NSObject, ObservableObject {
 
   func delete(at offsets: IndexSet) {
     purchased.remove(atOffsets: offsets)
+
+    updateCompanion()
+  }
+
+  private func updateCompanion() {
+      // 1
+    let ids = purchased.map { $0.id }
+
+      // 2
+    Connectivity.shared.send(movieIds: ids)
   }
 }
+
+
