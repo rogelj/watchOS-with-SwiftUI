@@ -15,6 +15,7 @@ final class Connectivity: NSObject, ObservableObject {
 
   override private init() {
     super.init()
+
 #if !os(watchOS)
     guard WCSession.isSupported() else {
       return
@@ -28,21 +29,27 @@ final class Connectivity: NSObject, ObservableObject {
   public func send(
     movieIds: [Int],
     delivery: Delivery,
+    wantedQrCodes: [Int]? = nil,
     replyHandler: (([String: Any]) -> Void)? = nil,
     errorHandler: ((Error) -> Void)? = nil
   ) {
     guard canSendToPeer() else { return }
 
-    let userInfo: [String: [Int]] = [
+    var userInfo: [String: [Int]] = [
       ConnectivityUserInfoKey.purchased.rawValue: movieIds
     ]
+
+    if let wantedQrCodes = wantedQrCodes {
+      let key = ConnectivityUserInfoKey.qrCodes.rawValue
+      userInfo[key] = wantedQrCodes
+    }
 
     switch delivery {
       case .failable:
         WCSession.default.sendMessage(
           userInfo,
-        replyHandler: optionalMainQueueDispatch(handler: replyHandler),
-        errorHandler: optionalMainQueueDispatch(handler: errorHandler)
+          replyHandler: optionalMainQueueDispatch(handler: replyHandler),
+          errorHandler: optionalMainQueueDispatch(handler: errorHandler)
         )
 
       case .guaranteed:
@@ -71,6 +78,33 @@ final class Connectivity: NSObject, ObservableObject {
     )
   }
 
+#if os(iOS)
+  public func sendQrCodes(_ data: [String: Any]) {
+    let key = ConnectivityUserInfoKey.qrCodes.rawValue
+    guard let ids = data[key] as? [Int], !ids.isEmpty else { return }
+
+    let tempDir = FileManager.default.temporaryDirectory
+
+    TicketOffice.shared
+      .movies
+      .filter { ids.contains($0.id) }
+      .forEach { movie in
+        let image = QRCode.generate(
+          movie: movie,
+          size: .init(width: 100, height: 100)
+        )
+
+        guard let data = image?.pngData() else { return }
+
+        let url = tempDir.appendingPathComponent(UUID().uuidString)
+        guard let _ = try? data.write(to: url) else {
+          return
+        }
+
+        WCSession.default.transferFile(url, metadata: [key: movie.id])
+      }
+  }
+#endif
 
   private func canSendToPeer() -> Bool {
     guard WCSession.default.activationState == .activated else {
@@ -90,36 +124,37 @@ final class Connectivity: NSObject, ObservableObject {
     return true
   }
 
-    // 1
+  private func update(from dictionary: [String: Any]) {
+#if os(iOS)
+    sendQrCodes(dictionary)
+#endif
+
+    let key = ConnectivityUserInfoKey.purchased.rawValue
+    guard let ids = dictionary[key] as? [Int] else {
+      return
+    }
+
+    self.purchasedIds = ids
+  }
+
   typealias OptionalHandler<T> = ((T) -> Void)?
 
-    // 2
-  private func optionalMainQueueDispatch<T>(
-    handler: OptionalHandler<T>
-  ) -> OptionalHandler<T> {
-      // 3
+  private func optionalMainQueueDispatch<T>(handler: OptionalHandler<T>) -> OptionalHandler<T> {
     guard let handler = handler else {
       return nil
     }
 
-      // 4
     return { item in
-        // 5
       DispatchQueue.main.async {
         handler(item)
       }
     }
   }
-
 }
 
   // MARK: - WCSessionDelegate
 extension Connectivity: WCSessionDelegate {
-  func session(
-    _ session: WCSession,
-    activationDidCompleteWith activationState: WCSessionActivationState,
-    error: Error?
-  ) {
+  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
   }
 
 #if os(iOS)
@@ -130,7 +165,6 @@ extension Connectivity: WCSessionDelegate {
       // If the person has more than one watch, and they switch,
       // reactivate their session on the new device.
     WCSession.default.activate()
-
   }
 #endif
 
@@ -162,7 +196,7 @@ extension Connectivity: WCSessionDelegate {
   }
 
     // This method is called when a message is sent with failable priority
-    // and a reply was *not* requested.
+    // and a reply was *not* request.
   func session(
     _ session: WCSession,
     didReceiveMessage message: [String: Any]
@@ -183,13 +217,17 @@ extension Connectivity: WCSessionDelegate {
   ) {
   }
 
-  private func update(from dictionary: [String: Any]) {
-    let key = ConnectivityUserInfoKey.purchased.rawValue
-    guard let ids = dictionary[key] as? [Int] else {
+#if os(watchOS)
+  func session(_ session: WCSession, didReceive file: WCSessionFile) {
+    let key = ConnectivityUserInfoKey.qrCodes.rawValue
+    guard let id = file.metadata?[key] as? Int else {
       return
     }
-    self.purchasedIds = ids
+
+    let destination = QRCode.url(for: id)
+
+    try? FileManager.default.removeItem(at: destination)
+    try? FileManager.default.moveItem(at: file.fileURL, to: destination)
   }
+#endif
 }
-
-
