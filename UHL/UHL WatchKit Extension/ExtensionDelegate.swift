@@ -5,7 +5,7 @@ final class ExtensionDelegate: NSObject, WKApplicationDelegate {
       // 1
     backgroundTasks.forEach { task in
         // 2
-      guard task is WKSnapshotRefreshBackgroundTask else {
+      guard let snapshot = task as? WKSnapshotRefreshBackgroundTask else {
         task.setTaskCompletedWithSnapshot(false)
         return
       }
@@ -13,8 +13,38 @@ final class ExtensionDelegate: NSObject, WKApplicationDelegate {
         // 3
       print("Taking a snapshot")
 
+      let nextSnapshotDate = nextSnapshotDate()
+
+      let handler = {
+        snapshot.setTaskCompleted(
+          restoredDefaultState: false,
+          estimatedSnapshotExpiration: nextSnapshotDate,
+          userInfo: nil
+        )
+      }
+
+      // 1
+      var snapshotUserInfo: SnapshotUserInfo?
+
+      // 2
+      if lastMatchPlayedRecently() {
+        snapshotUserInfo = SnapshotUserInfo(
+          handler: handler,
+          destination: .record
+        )
+      }
+
+      // 3
+      if let snapshotUserInfo = snapshotUserInfo {
+        NotificationCenter.default.post(
+          name: .pushViewForSnapshot,
+          object: nil,
+          userInfo: snapshotUserInfo.encode()
+        )
+      } else {
         // 4
-      task.setTaskCompletedWithSnapshot(true)
+        handler()
+      }
     }
   }
 
@@ -33,5 +63,19 @@ final class ExtensionDelegate: NSObject, WKApplicationDelegate {
 
     // 3
     return Calendar.current.startOfDay(for: twoDaysLater)
+  }
+
+  private func lastMatchPlayedRecently() -> Bool {
+    // 1
+    guard let last = Season.shared.pastMatches().last?.date else {
+      print("No last date")
+      return false
+    }
+
+    print("The date is \(last.formatted()) and now is \(Date.now.formatted())")
+
+    // 2
+    return Calendar.current.isDateInYesterday(last) ||
+    Calendar.current.isDateInToday(last)
   }
 }
