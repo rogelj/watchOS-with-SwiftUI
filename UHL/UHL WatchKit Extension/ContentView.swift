@@ -24,7 +24,7 @@ struct ContentView: View {
       if let match = season.nextMatch {
         NavigationLink(
           destination: ScheduleView(
-            selectedMatchId: $selectedMatchId
+            selectedMatchId: $selectedMatchId, snapshotHandler: snapshotHandler
           ),
           isActive: isDestinationActive(.schedule)
         ) {

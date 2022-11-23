@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ScheduleDetailView: View {
   let match: Match
+  let snapshotHandler: (() -> Void)?
 
   var body: some View {
     VStack {
@@ -21,6 +22,9 @@ struct ScheduleDetailView: View {
           .font(.caption2)
         }
         .padding(.bottom)
+        .task {
+          snapshotHandler?()
+        }
 
         HStack {
           Image(systemName: "mappin")
@@ -35,6 +39,6 @@ struct ScheduleDetailView: View {
 struct ScheduleDetailView_Previews: PreviewProvider {
   static var previews: some View {
     // swiftlint:disable:next force_unwrapping
-    ScheduleDetailView(match: Season.shared.nextMatch!)
+    ScheduleDetailView(match: Season.shared.nextMatch!, snapshotHandler: nil)
   }
 }

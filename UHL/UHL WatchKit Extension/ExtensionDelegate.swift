@@ -32,6 +32,13 @@ final class ExtensionDelegate: NSObject, WKApplicationDelegate {
           handler: handler,
           destination: .record
         )
+      } else if let id = idForPendingMatch() {
+        print("Going to schedule")
+        snapshotUserInfo = SnapshotUserInfo(
+          handler: handler,
+          destination: .schedule,
+          matchID: id
+        )
       }
 
       // 3
@@ -77,5 +84,20 @@ final class ExtensionDelegate: NSObject, WKApplicationDelegate {
     // 2
     return Calendar.current.isDateInYesterday(last) ||
     Calendar.current.isDateInToday(last)
+  }
+
+  private func idForPendingMatch() -> Match.ID? {
+    guard let match = Season.shared.nextMatch else {
+      return nil
+    }
+
+    let date = match.date
+    let calendar = Calendar.current
+
+    if calendar.isDateInTomorrow(date) || calendar.isDateInToday(date) {
+      return match.id
+    } else {
+      return nil
+    }
   }
 }
