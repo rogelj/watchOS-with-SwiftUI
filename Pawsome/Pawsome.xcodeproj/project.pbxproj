@@ -69,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		4695A00F292E6C9500836EA5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		46DC21FA292E785700AE5E63 /* Pawsome WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pawsome WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		D253DB432675783A002D63DF /* Pawsome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253DB472675783A002D63DF /* Pawsome WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pawsome WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253DB4C2675783C002D63DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		D253DB562675783C002D63DF /* Pawsome WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				46DC21FA292E785700AE5E63 /* Pawsome WatchKit Extension.entitlements */,
 				D253DB672675783D002D63DF /* PushNotificationPayload.apns */,
 				D253DB662675783D002D63DF /* Info.plist */,
 				D253DB5F2675783C002D63DF /* ComplicationController.swift */,
@@ -444,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Pawsome WatchKit Extension/Pawsome WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pawsome WatchKit Extension/Preview Content\"";
@@ -479,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Pawsome WatchKit Extension/Pawsome WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pawsome WatchKit Extension/Preview Content\"";
