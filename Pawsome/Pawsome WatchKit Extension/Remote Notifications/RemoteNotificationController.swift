@@ -11,6 +11,8 @@ final class RemoteNotificationController: WKUserNotificationHostingController<Re
     return RemoteNotificationView(model: model)
   }
 
+  override class var isInteractive: Bool { true }
+
   override func didReceive(_ notification: UNNotification) {
     let fmt = ISO8601DateFormatter()
 
@@ -33,4 +35,13 @@ final class RemoteNotificationController: WKUserNotificationHostingController<Re
 
     model = RemoteNotificationModel(title: title, details: body, date: date)
   }
+
+  override class var sashColor: Color? {
+    Color(red: 0, green: 156 / 255, blue: 83 / 255)
+  }
+  override class var titleColor: Color? { Color.purple }
+  override class var subtitleColor: Color? { Color.orange }
+  override class var wantsSashBlur: Bool { true }
+
+
 }

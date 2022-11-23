@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4695A010292E6C9500836EA5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695A00F292E6C9500836EA5 /* ExtensionDelegate.swift */; };
 		D253DB482675783A002D63DF /* Pawsome WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D253DB472675783A002D63DF /* Pawsome WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D253DB4D2675783C002D63DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D253DB4C2675783C002D63DF /* Assets.xcassets */; };
 		D253DB532675783C002D63DF /* Pawsome WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D253DB522675783C002D63DF /* Pawsome WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4695A00F292E6C9500836EA5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D253DB432675783A002D63DF /* Pawsome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawsome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253DB472675783A002D63DF /* Pawsome WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pawsome WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D253DB4C2675783C002D63DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				D253DB5D2675783C002D63DF /* NotificationView.swift */,
 				D253DB572675783C002D63DF /* PawsomeApp.swift */,
 				D253DB612675783D002D63DF /* Assets.xcassets */,
+				4695A00F292E6C9500836EA5 /* ExtensionDelegate.swift */,
 				D253DB632675783D002D63DF /* Preview Content */,
 				D253DB7B26757FD5002D63DF /* Remote Notifications */,
 			);
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4695A010292E6C9500836EA5 /* ExtensionDelegate.swift in Sources */,
 				D253DB5C2675783C002D63DF /* NotificationController.swift in Sources */,
 				D253DB8326757FD5002D63DF /* RemoteNotificationView.swift in Sources */,
 				D253DB7A26757F6D002D63DF /* LocalNotifications.swift in Sources */,
@@ -443,7 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pawsome WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pawsome WatchKit Extension/Info.plist";
@@ -478,7 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pawsome WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pawsome WatchKit Extension/Info.plist";
@@ -514,7 +518,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Pawsome_WatchKit_Extension;
 				INFOPLIST_FILE = "Pawsome-WatchKit-App-Info.plist";
@@ -543,7 +547,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Pawsome_WatchKit_Extension;
 				INFOPLIST_FILE = "Pawsome-WatchKit-App-Info.plist";
@@ -569,7 +573,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gargoylesoft.Pawsome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,7 +586,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gargoylesoft.Pawsome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
