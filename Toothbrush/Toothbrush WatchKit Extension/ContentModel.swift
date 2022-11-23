@@ -12,11 +12,13 @@ final class ContentModel: NSObject, ObservableObject {
   @Published var roundsLeft = 0
   @Published var endOfRound: Date?
   @Published var endOfBrushing: Date?
+  @Published var showGettingReady = false
 
   private var timer: Timer!
   private var session: WKExtendedRuntimeSession!
 
   func startBrushing() {
+    showGettingReady = false
     session = WKExtendedRuntimeSession()
     session.delegate = self
     session.start()
@@ -68,7 +70,7 @@ extension ContentModel: WKExtendedRuntimeSessionDelegate {
     didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason,
     error: Error?) {
       timer.invalidate()
-      
+
       timer = nil
       endOfRound = nil
       roundsLeft = 0

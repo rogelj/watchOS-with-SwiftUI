@@ -7,7 +7,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       Button {
-        model.startBrushing()
+        model.showGettingReady = true
       } label: {
         Text("Start brushing")
       }
@@ -20,6 +20,19 @@ struct ContentView: View {
         Text("This round time left: \(endOfRound, style: .timer)")
       }
     }
+    .overlay(
+      VStack {
+        if model.showGettingReady {
+          GetReadyView {
+            model.startBrushing()
+          }
+          .frame(width: 125, height: 125)
+          .padding()
+        } else {
+          EmptyView()
+        }
+      }
+    )
     .onChange(of: scenePhase) { print($0) }
   }
 }
