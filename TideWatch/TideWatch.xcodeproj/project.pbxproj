@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		466AF6BA2934F856007D8389 /* ComplicationTemplateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6B92934F856007D8389 /* ComplicationTemplateFactory.swift */; };
+		466AF6BD2934FAB0007D8389 /* GraphicCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6BC2934FAB0007D8389 /* GraphicCircular.swift */; };
+		466AF6BF2934FB1A007D8389 /* ComplicationTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6BE2934FB1A007D8389 /* ComplicationTemplates.swift */; };
+		466AF6C12934FD39007D8389 /* GraphicBezel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C02934FD39007D8389 /* GraphicBezel.swift */; };
+		466AF6C32934FF12007D8389 /* ExtraLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C22934FF12007D8389 /* ExtraLarge.swift */; };
+		466AF6C52934FF20007D8389 /* CircularSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C42934FF20007D8389 /* CircularSmall.swift */; };
+		466AF6CB2934FF32007D8389 /* UtilitarianSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */; };
+		466AF6CC2934FF32007D8389 /* UtilitarianLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */; };
+		466AF6CD2934FF32007D8389 /* ModularSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C82934FF31007D8389 /* ModularSmall.swift */; };
+		466AF6CE2934FF32007D8389 /* GraphicCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6C92934FF31007D8389 /* GraphicCorner.swift */; };
+		466AF6CF2934FF32007D8389 /* ModularLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AF6CA2934FF31007D8389 /* ModularLarge.swift */; };
 		D26E95C7266563ED00DD3362 /* TideWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D26E95C5266563ED00DD3362 /* TideWatch.xcdatamodeld */; };
 		D26E95C92665644700DD3362 /* Tide+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26E95C82665644700DD3362 /* Tide+Extension.swift */; };
 		D26E95EB2665686D00DD3362 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26E95EA2665686D00DD3362 /* PersistenceController.swift */; };
@@ -56,6 +67,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		466AF6B92934F856007D8389 /* ComplicationTemplateFactory.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ComplicationTemplateFactory.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6BC2934FAB0007D8389 /* GraphicCircular.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = GraphicCircular.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6BE2934FB1A007D8389 /* ComplicationTemplates.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ComplicationTemplates.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C02934FD39007D8389 /* GraphicBezel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = GraphicBezel.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C22934FF12007D8389 /* ExtraLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraLarge.swift; sourceTree = "<group>"; };
+		466AF6C42934FF20007D8389 /* CircularSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularSmall.swift; sourceTree = "<group>"; };
+		466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitarianSmall.swift; sourceTree = "<group>"; };
+		466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitarianLarge.swift; sourceTree = "<group>"; };
+		466AF6C82934FF31007D8389 /* ModularSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModularSmall.swift; sourceTree = "<group>"; };
+		466AF6C92934FF31007D8389 /* GraphicCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicCorner.swift; sourceTree = "<group>"; };
+		466AF6CA2934FF31007D8389 /* ModularLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModularLarge.swift; sourceTree = "<group>"; };
 		D26E95C6266563ED00DD3362 /* TideWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TideWatch.xcdatamodel; sourceTree = "<group>"; };
 		D26E95C82665644700DD3362 /* Tide+Extension.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Tide+Extension.swift"; sourceTree = "<group>"; tabWidth = 4; };
 		D26E95EA2665686D00DD3362 /* PersistenceController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -94,10 +116,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		466AF6BB2934FA95007D8389 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				466AF6BC2934FAB0007D8389 /* GraphicCircular.swift */,
+				466AF6C22934FF12007D8389 /* ExtraLarge.swift */,
+				466AF6C02934FD39007D8389 /* GraphicBezel.swift */,
+				466AF6C42934FF20007D8389 /* CircularSmall.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 		D26E95A026632FD400DD3362 /* Complications */ = {
 			isa = PBXGroup;
 			children = (
+				466AF6BB2934FA95007D8389 /* Templates */,
 				D26E962B266D773800DD3362 /* ComplicationController.swift */,
+				466AF6B92934F856007D8389 /* ComplicationTemplateFactory.swift */,
+				466AF6BE2934FB1A007D8389 /* ComplicationTemplates.swift */,
+				466AF6C92934FF31007D8389 /* GraphicCorner.swift */,
+				466AF6CA2934FF31007D8389 /* ModularLarge.swift */,
+				466AF6C82934FF31007D8389 /* ModularSmall.swift */,
+				466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */,
+				466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */,
 			);
 			path = Complications;
 			sourceTree = "<group>";
@@ -315,16 +356,27 @@
 			files = (
 				D2756D53259AA50B00B9B446 /* TideDataView.swift in Sources */,
 				D2756D4B259AA1B900B9B446 /* Color+Extension.swift in Sources */,
+				466AF6CC2934FF32007D8389 /* UtilitarianLarge.swift in Sources */,
 				D2756D31259A90EB00B9B446 /* CoOpsApi.swift in Sources */,
 				D2756D3B259A97B300B9B446 /* TidePredictions.swift in Sources */,
 				D2756D0B259A8EA300B9B446 /* ContentView.swift in Sources */,
+				466AF6C12934FD39007D8389 /* GraphicBezel.swift in Sources */,
+				466AF6CE2934FF32007D8389 /* GraphicCorner.swift in Sources */,
 				D2756D60259AA82300B9B446 /* ContentModel.swift in Sources */,
 				D2756D0D259A8EA300B9B446 /* TideWatchApp.swift in Sources */,
+				466AF6CD2934FF32007D8389 /* ModularSmall.swift in Sources */,
+				466AF6C32934FF12007D8389 /* ExtraLarge.swift in Sources */,
 				D2B2A5F5265A5C630078863D /* Formatters.swift in Sources */,
 				D26E95C92665644700DD3362 /* Tide+Extension.swift in Sources */,
+				466AF6BF2934FB1A007D8389 /* ComplicationTemplates.swift in Sources */,
+				466AF6CB2934FF32007D8389 /* UtilitarianSmall.swift in Sources */,
+				466AF6CF2934FF32007D8389 /* ModularLarge.swift in Sources */,
+				466AF6BD2934FAB0007D8389 /* GraphicCircular.swift in Sources */,
 				D26E95EB2665686D00DD3362 /* PersistenceController.swift in Sources */,
+				466AF6C52934FF20007D8389 /* CircularSmall.swift in Sources */,
 				D26E95F02667008500DD3362 /* Calendar+Extension.swift in Sources */,
 				D26E95EE26659BF400DD3362 /* TidePrediction.swift in Sources */,
+				466AF6BA2934F856007D8389 /* ComplicationTemplateFactory.swift in Sources */,
 				D26E95C7266563ED00DD3362 /* TideWatch.xcdatamodeld in Sources */,
 				D26E962C266D773800DD3362 /* ComplicationController.swift in Sources */,
 				D2756D2C259A909600B9B446 /* MeasurementStation.swift in Sources */,
