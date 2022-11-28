@@ -9,11 +9,15 @@ import ClockKit
 import SwiftUI
 
 struct HappyComplication: View {
-    var body: some View {
-        Image("Full")
+  var body: some View {
+    ZStack {
+      Circle()
+      Image("eyesAndMouth")
         .resizable()
         .aspectRatio(contentMode: .fit)
+        .complicationForeground()
     }
+  }
 }
 
 struct HappyComplication_Previews: PreviewProvider {
