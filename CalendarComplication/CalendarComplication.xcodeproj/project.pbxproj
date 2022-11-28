@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46A0A2152935216000F5047D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A0A2142935216000F5047D /* Event.swift */; };
+		46A0A2172935224500F5047D /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A0A2162935224500F5047D /* EventView.swift */; };
 		D2523C832700E0FB002C6299 /* CalendarComplication.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D2523C822700E0FB002C6299 /* CalendarComplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2523C882700E0FE002C6299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2523C872700E0FE002C6299 /* Assets.xcassets */; };
 		D2523C8E2700E0FE002C6299 /* CalendarComplication WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2523C8D2700E0FE002C6299 /* CalendarComplication WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -15,7 +17,7 @@
 		D2523C992700E0FF002C6299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2523C982700E0FF002C6299 /* Assets.xcassets */; };
 		D2523C9C2700E0FF002C6299 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2523C9B2700E0FF002C6299 /* Preview Assets.xcassets */; };
 		D2523CAC2700E96B002C6299 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2523CAB2700E96B002C6299 /* EventStore.swift */; };
-		D2523CAE2700EBF1002C6299 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2523CAD2700EBF1002C6299 /* EventView.swift */; };
+		D2523CAE2700EBF1002C6299 /* EventComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2523CAD2700EBF1002C6299 /* EventComplicationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46A0A2142935216000F5047D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		46A0A2162935224500F5047D /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		D2523C7E2700E0FB002C6299 /* CalendarComplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarComplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2523C822700E0FB002C6299 /* CalendarComplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarComplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2523C872700E0FE002C6299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		D2523C9B2700E0FF002C6299 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2523C9D2700E0FF002C6299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2523CAB2700E96B002C6299 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
-		D2523CAD2700EBF1002C6299 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		D2523CAD2700EBF1002C6299 /* EventComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComplicationView.swift; sourceTree = "<group>"; };
 		D2C0A729270A300D004173F4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +127,9 @@
 				D2523C942700E0FE002C6299 /* CalendarComplicationApp.swift */,
 				D2523C962700E0FE002C6299 /* ComplicationController.swift */,
 				D2523CAB2700E96B002C6299 /* EventStore.swift */,
-				D2523CAD2700EBF1002C6299 /* EventView.swift */,
+				D2523CAD2700EBF1002C6299 /* EventComplicationView.swift */,
+				46A0A2162935224500F5047D /* EventView.swift */,
+				46A0A2142935216000F5047D /* Event.swift */,
 				D2523C982700E0FF002C6299 /* Assets.xcassets */,
 				D2523C9A2700E0FF002C6299 /* Preview Content */,
 			);
@@ -268,7 +274,9 @@
 				D2523C952700E0FE002C6299 /* CalendarComplicationApp.swift in Sources */,
 				D2523CAC2700E96B002C6299 /* EventStore.swift in Sources */,
 				D2523C972700E0FE002C6299 /* ComplicationController.swift in Sources */,
-				D2523CAE2700EBF1002C6299 /* EventView.swift in Sources */,
+				46A0A2172935224500F5047D /* EventView.swift in Sources */,
+				D2523CAE2700EBF1002C6299 /* EventComplicationView.swift in Sources */,
+				46A0A2152935216000F5047D /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarComplication WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CalendarComplication WatchKit Extension/Info.plist";
@@ -442,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarComplication WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CalendarComplication WatchKit Extension/Info.plist";
@@ -476,7 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = CalendarComplication_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -500,7 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = CalendarComplication_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -521,7 +529,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.CalendarComplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -534,7 +542,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8TTD5JG84R;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.CalendarComplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
