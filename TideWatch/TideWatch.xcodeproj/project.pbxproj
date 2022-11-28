@@ -71,13 +71,13 @@
 		466AF6BC2934FAB0007D8389 /* GraphicCircular.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = GraphicCircular.swift; sourceTree = "<group>"; tabWidth = 4; };
 		466AF6BE2934FB1A007D8389 /* ComplicationTemplates.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ComplicationTemplates.swift; sourceTree = "<group>"; tabWidth = 4; };
 		466AF6C02934FD39007D8389 /* GraphicBezel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = GraphicBezel.swift; sourceTree = "<group>"; tabWidth = 4; };
-		466AF6C22934FF12007D8389 /* ExtraLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraLarge.swift; sourceTree = "<group>"; };
-		466AF6C42934FF20007D8389 /* CircularSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularSmall.swift; sourceTree = "<group>"; };
-		466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitarianSmall.swift; sourceTree = "<group>"; };
-		466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitarianLarge.swift; sourceTree = "<group>"; };
-		466AF6C82934FF31007D8389 /* ModularSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModularSmall.swift; sourceTree = "<group>"; };
-		466AF6C92934FF31007D8389 /* GraphicCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicCorner.swift; sourceTree = "<group>"; };
-		466AF6CA2934FF31007D8389 /* ModularLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModularLarge.swift; sourceTree = "<group>"; };
+		466AF6C22934FF12007D8389 /* ExtraLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ExtraLarge.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C42934FF20007D8389 /* CircularSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CircularSmall.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = UtilitarianSmall.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = UtilitarianLarge.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C82934FF31007D8389 /* ModularSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ModularSmall.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6C92934FF31007D8389 /* GraphicCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = GraphicCorner.swift; sourceTree = "<group>"; tabWidth = 4; };
+		466AF6CA2934FF31007D8389 /* ModularLarge.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ModularLarge.swift; sourceTree = "<group>"; tabWidth = 4; };
 		D26E95C6266563ED00DD3362 /* TideWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TideWatch.xcdatamodel; sourceTree = "<group>"; };
 		D26E95C82665644700DD3362 /* Tide+Extension.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Tide+Extension.swift"; sourceTree = "<group>"; tabWidth = 4; };
 		D26E95EA2665686D00DD3362 /* PersistenceController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -123,6 +123,11 @@
 				466AF6C22934FF12007D8389 /* ExtraLarge.swift */,
 				466AF6C02934FD39007D8389 /* GraphicBezel.swift */,
 				466AF6C42934FF20007D8389 /* CircularSmall.swift */,
+				466AF6C92934FF31007D8389 /* GraphicCorner.swift */,
+				466AF6CA2934FF31007D8389 /* ModularLarge.swift */,
+				466AF6C82934FF31007D8389 /* ModularSmall.swift */,
+				466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */,
+				466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -134,11 +139,6 @@
 				D26E962B266D773800DD3362 /* ComplicationController.swift */,
 				466AF6B92934F856007D8389 /* ComplicationTemplateFactory.swift */,
 				466AF6BE2934FB1A007D8389 /* ComplicationTemplates.swift */,
-				466AF6C92934FF31007D8389 /* GraphicCorner.swift */,
-				466AF6CA2934FF31007D8389 /* ModularLarge.swift */,
-				466AF6C82934FF31007D8389 /* ModularSmall.swift */,
-				466AF6C72934FF31007D8389 /* UtilitarianLarge.swift */,
-				466AF6C62934FF31007D8389 /* UtilitarianSmall.swift */,
 			);
 			path = Complications;
 			sourceTree = "<group>";

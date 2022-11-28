@@ -1,8 +1,8 @@
 import ClockKit
 
-struct CircularSmall: ComplicationTemplateFactory {
+struct ModularSmall: ComplicationTemplateFactory {
     func template(for waterLevel: Tide) -> CLKComplicationTemplate {
-        return CLKComplicationTemplateCircularSmallSimpleText(
+        return CLKComplicationTemplateModularSmallSimpleText(
             textProvider: textProvider(for: waterLevel)
         )
     }

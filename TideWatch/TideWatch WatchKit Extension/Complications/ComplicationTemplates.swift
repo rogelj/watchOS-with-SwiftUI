@@ -1,9 +1,8 @@
+//      ComplicationTemplates.swift
+//      TideWatch WatchKit App
 //
-//  ComplicationTemplates.swift
-//  TideWatch WatchKit App
-//
-//  Created by J Rogel PhD on 28/11/2022.
-//
+//      Created by J Rogel PhD on 28/11/2022.
+
 
 import ClockKit
 
@@ -12,11 +11,19 @@ enum ComplicationTemplates {
         for complication: CLKComplication
     ) -> ComplicationTemplateFactory? {
         switch complication.family {
-            case .graphicCircular: return GraphicCircular()
-            case .graphicBezel: return GraphicBezel()
+        case .circularSmall: return CircularSmall()
+        case .extraLarge: return ExtraLarge()
+        case .graphicBezel: return GraphicBezel()
+        case .graphicCircular: return GraphicCircular()
+        case .graphicCorner: return GraphicCorner()
+        case .modularSmall: return ModularSmall()
+        case .modularLarge: return ModularLarge()
+        case .utilitarianLarge: return UtilitarianLarge()
+        case .utilitarianSmall, .utilitarianSmallFlat:
+            return UtilitarianSmall()
 
-            default:
-                return nil
+        default:
+            return nil
         }
     }
 }
