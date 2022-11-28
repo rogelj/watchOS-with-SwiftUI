@@ -23,11 +23,13 @@ struct EventView: View {
         RoundedRectangle(cornerRadius: 3)
           .frame(width: 5)
           .foregroundColor(event.color)
+          .complicationForeground()
         VStack(alignment: .leading) {
           Text(formatter.string(from: event.startDate, to: event.endDate))
             .font(.subheadline)
           Text(event.title)
             .font(.headline)
+            .complicationForeground()
           if let location = event.location {
             Text(location)
               .font(.subheadline)
@@ -53,7 +55,7 @@ struct EventView_Previews: PreviewProvider {
         CLKComplicationTemplateGraphicRectangularFullView(
           EventView(event: event)
         )
-        .previewContext()
+        .previewContext(faceColor: .green)
       }
 
     }
