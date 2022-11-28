@@ -5,13 +5,6 @@ final class ExtensionDelegate: NSObject, WKExtensionDelegate {
   private let backgroundWorker = BackgroundWorker()
   private var downloads: [String: UrlDownloader] = [:]
 
-  public static func updateActiveComplications() {
-    let server = CLKComplicationServer.sharedInstance()
-    server.activeComplications?.forEach {
-      server.reloadTimeline(for: $0)
-    }
-  }
-
   func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
     backgroundTasks.forEach { task in
       switch task {
@@ -24,15 +17,21 @@ final class ExtensionDelegate: NSObject, WKExtensionDelegate {
             backgroundWorker.schedule()
             task.setTaskCompletedWithSnapshot(false)
           }
+
         case let task as WKURLSessionRefreshBackgroundTask:
-          let downloder = downloader(for: task.sessionIdentifier)
-          downloder.perform { updateComplications in
+          let downloader = downloader(for: task.sessionIdentifier)
+
+          downloader.perform { updateComplications in
             if updateComplications {
               Self.updateActiveComplications()
             }
-            downloder.schedule()
+
+            downloader.schedule()
+
+            self.downloads[task.sessionIdentifier] = nil
             task.setTaskCompletedWithSnapshot(false)
           }
+
         default:
           task.setTaskCompletedWithSnapshot(false)
       }
@@ -45,6 +44,14 @@ final class ExtensionDelegate: NSObject, WKExtensionDelegate {
       downloads[identifier] = downloader
       return downloader
     }
+
     return download
+  }
+
+  public static func updateActiveComplications() {
+    let server = CLKComplicationServer.sharedInstance()
+    server.activeComplications?.forEach {
+      server.reloadTimeline(for: $0)
+    }
   }
 }

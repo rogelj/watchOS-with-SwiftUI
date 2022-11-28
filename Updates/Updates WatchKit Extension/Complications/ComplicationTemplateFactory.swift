@@ -23,18 +23,18 @@ extension ComplicationTemplateFactory {
     )
 
     formatter.unitStyle = unitStyle
-    
+
     return .init(text: formatter.string(from: fahrenheit))
   }
 
   func fullColorImageProvider() -> CLKFullColorImageProvider {
-    // swiftlint:disable:next force_unwrapping
+      // swiftlint:disable:next force_unwrapping
     let image = UIImage(systemName: "thermometer")!
     return .init(fullColorImage: image)
   }
 
   func plainImageProvider() -> CLKImageProvider {
-    // swiftlint:disable:next force_unwrapping
+      // swiftlint:disable:next force_unwrapping
     let image = UIImage(systemName: "thermometer")!
     return .init(onePieceImage: image)
   }

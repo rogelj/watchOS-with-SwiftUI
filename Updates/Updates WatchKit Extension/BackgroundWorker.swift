@@ -17,9 +17,11 @@ final class BackgroundWorker {
       byAdding: .minute,
       value: minutes,
       to: Date.now
+      // swiftlint:disable:next force_unwrapping
     )!
 
-    WKExtension.shared()
+    WKExtension
+      .shared()
       .scheduleBackgroundRefresh(
         withPreferredDate: when,
         userInfo: nil
@@ -31,7 +33,7 @@ final class BackgroundWorker {
   }
 
   public func perform(_ completion: (Bool) -> Void) {
-    // Do the background work here
     completion(true)
   }
 }
+
