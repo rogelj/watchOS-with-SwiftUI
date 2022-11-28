@@ -3,12 +3,14 @@ import EventKit
 
 struct EventComplicationView: View {
   @ObservedObject private var eventStore = EventStore.shared
+  let event: Event?
 
   var body: some View {
     VStack {
       if eventStore.calendarAccessGranted == false {
         Text("This app requires calendar permission.")
-      } else if let event = eventStore.nextEvent {
+      } else if let event = event {
+        EventView(event: event)
       } else {
         Text("No more events today.")
       }
@@ -21,6 +23,6 @@ struct EventComplicationView: View {
 
 struct EventComplicationView_Previews: PreviewProvider {
   static var previews: some View {
-    EventComplicationView()
+    EventComplicationView(event: nil)
   }
 }

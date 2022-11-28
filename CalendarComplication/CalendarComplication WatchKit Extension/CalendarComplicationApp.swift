@@ -5,7 +5,7 @@ struct CalendarComplicationApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        EventComplicationView()
+        EventComplicationView(event: nil)
       }
     }
   }
