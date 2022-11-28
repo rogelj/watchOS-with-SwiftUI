@@ -15,7 +15,6 @@
 		D26E962C266D773800DD3362 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26E962B266D773800DD3362 /* ComplicationController.swift */; };
 		D2756CFA259A8EA200B9B446 /* TideWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D2756CF9259A8EA200B9B446 /* TideWatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2756CFF259A8EA300B9B446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2756CFE259A8EA300B9B446 /* Assets.xcassets */; };
-		D2756D06259A8EA300B9B446 /* TideWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2756D05259A8EA300B9B446 /* TideWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2756D0B259A8EA300B9B446 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2756D0A259A8EA300B9B446 /* ContentView.swift */; };
 		D2756D0D259A8EA300B9B446 /* TideWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2756D0C259A8EA300B9B446 /* TideWatchApp.swift */; };
 		D2756D11259A8EA400B9B446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2756D10259A8EA400B9B446 /* Assets.xcassets */; };
@@ -40,27 +39,9 @@
 			remoteGlobalIDString = D2756CF8259A8EA200B9B446;
 			remoteInfo = "TideWatch WatchKit App";
 		};
-		D2756D07259A8EA300B9B446 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D2756CEF259A8EA200B9B446 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2756D04259A8EA300B9B446;
-			remoteInfo = "TideWatch WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D2756D1B259A8EA400B9B446 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				D2756D06259A8EA300B9B446 /* TideWatch WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D2756D1F259A8EA400B9B446 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,7 +66,6 @@
 		D2756CF9259A8EA200B9B446 /* TideWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TideWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2756CFE259A8EA300B9B446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2756D00259A8EA300B9B446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2756D05259A8EA300B9B446 /* TideWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TideWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2756D0A259A8EA300B9B446 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2756D0C259A8EA300B9B446 /* TideWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideWatchApp.swift; sourceTree = "<group>"; };
 		D2756D10259A8EA400B9B446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,7 +151,6 @@
 			children = (
 				D2756CF5259A8EA200B9B446 /* TideWatch.app */,
 				D2756CF9259A8EA200B9B446 /* TideWatch WatchKit App.app */,
-				D2756D05259A8EA300B9B446 /* TideWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,35 +216,18 @@
 			buildConfigurationList = D2756D1C259A8EA400B9B446 /* Build configuration list for PBXNativeTarget "TideWatch WatchKit App" */;
 			buildPhases = (
 				D2756CF7259A8EA200B9B446 /* Resources */,
-				D2756D1B259A8EA400B9B446 /* Embed App Extensions */,
+				D8B1B6AC267841B200E36AF5 /* SwiftLint */,
+				D2756D01259A8EA300B9B446 /* Sources */,
+				D2756D02259A8EA300B9B446 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D2756D08259A8EA300B9B446 /* PBXTargetDependency */,
 			);
 			name = "TideWatch WatchKit App";
 			productName = "TideWatch WatchKit App";
 			productReference = D2756CF9259A8EA200B9B446 /* TideWatch WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		D2756D04259A8EA300B9B446 /* TideWatch WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D2756D18259A8EA400B9B446 /* Build configuration list for PBXNativeTarget "TideWatch WatchKit Extension" */;
-			buildPhases = (
-				D8B1B6AC267841B200E36AF5 /* SwiftLint */,
-				D2756D01259A8EA300B9B446 /* Sources */,
-				D2756D02259A8EA300B9B446 /* Frameworks */,
-				D2756D03259A8EA300B9B446 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "TideWatch WatchKit Extension";
-			productName = "TideWatch WatchKit Extension";
-			productReference = D2756D05259A8EA300B9B446 /* TideWatch WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -274,15 +236,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					D2756CF4259A8EA200B9B446 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 					D2756CF8259A8EA200B9B446 = {
-						CreatedOnToolsVersion = 12.3;
-					};
-					D2756D04259A8EA300B9B446 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -302,7 +261,6 @@
 			targets = (
 				D2756CF4259A8EA200B9B446 /* TideWatch */,
 				D2756CF8259A8EA200B9B446 /* TideWatch WatchKit App */,
-				D2756D04259A8EA300B9B446 /* TideWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -320,17 +278,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2756CFF259A8EA300B9B446 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D2756D03259A8EA300B9B446 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				D2756D14259A8EA400B9B446 /* Preview Assets.xcassets in Resources */,
 				D2756D27259A8F8E00B9B446 /* Stations.json in Resources */,
 				D2756D11259A8EA400B9B446 /* Assets.xcassets in Resources */,
+				D2756CFF259A8EA300B9B446 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    for yml in ~/.com.raywenderlich.swiftlint.yml ~/com.raywenderlich.swiftlint.yml\n    do\n        if [ -f $yml ]; then\n            swiftlint --no-cache --config $yml\n            break\n        fi\n    done\nfi\n\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    for yml in ~/rogelj.swiftlint.yml\n    do\n        if [ -f $yml ]; then\n            swiftlint --no-cache --config $yml\n            break\n        fi\n    done\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -388,11 +339,6 @@
 			isa = PBXTargetDependency;
 			target = D2756CF8259A8EA200B9B446 /* TideWatch WatchKit App */;
 			targetProxy = D2756CFB259A8EA200B9B446 /* PBXContainerItemProxy */;
-		};
-		D2756D08259A8EA300B9B446 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2756D04259A8EA300B9B446 /* TideWatch WatchKit Extension */;
-			targetProxy = D2756D07259A8EA300B9B446 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,64 +457,20 @@
 			};
 			name = Release;
 		};
-		D2756D19259A8EA400B9B446 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TideWatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "TideWatch WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gargoylesoft.TideWatch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		D2756D1A259A8EA400B9B446 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TideWatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = BQUPLV7KWS;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "TideWatch WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gargoylesoft.TideWatch.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
 		D2756D1D259A8EA400B9B446 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BQUPLV7KWS;
-				IBSC_MODULE = TideWatch_WatchKit_Extension;
 				INFOPLIST_FILE = "TideWatch WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gargoylesoft.TideWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -584,11 +486,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BQUPLV7KWS;
-				IBSC_MODULE = TideWatch_WatchKit_Extension;
 				INFOPLIST_FILE = "TideWatch WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gargoylesoft.TideWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -633,15 +539,6 @@
 			buildConfigurations = (
 				D2756D16259A8EA400B9B446 /* Debug */,
 				D2756D17259A8EA400B9B446 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D2756D18259A8EA400B9B446 /* Build configuration list for PBXNativeTarget "TideWatch WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D2756D19259A8EA400B9B446 /* Debug */,
-				D2756D1A259A8EA400B9B446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
