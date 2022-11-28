@@ -1,5 +1,5 @@
 import Foundation
 
 enum TideType: String, Codable {
-  case high, low, rising, falling, unknown
+    case high, low, rising, falling, unknown
 }

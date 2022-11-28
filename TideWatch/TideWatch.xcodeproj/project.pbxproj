@@ -57,30 +57,30 @@
 
 /* Begin PBXFileReference section */
 		D26E95C6266563ED00DD3362 /* TideWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TideWatch.xcdatamodel; sourceTree = "<group>"; };
-		D26E95C82665644700DD3362 /* Tide+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tide+Extension.swift"; sourceTree = "<group>"; };
-		D26E95EA2665686D00DD3362 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		D26E95ED26659BF400DD3362 /* TidePrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidePrediction.swift; sourceTree = "<group>"; };
-		D26E95EF2667008500DD3362 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
-		D26E962B266D773800DD3362 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		D26E95C82665644700DD3362 /* Tide+Extension.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Tide+Extension.swift"; sourceTree = "<group>"; tabWidth = 4; };
+		D26E95EA2665686D00DD3362 /* PersistenceController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D26E95ED26659BF400DD3362 /* TidePrediction.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TidePrediction.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D26E95EF2667008500DD3362 /* Calendar+Extension.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; tabWidth = 4; };
+		D26E962B266D773800DD3362 /* ComplicationController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		D2756CF5259A8EA200B9B446 /* TideWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2756CF9259A8EA200B9B446 /* TideWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TideWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2756CFE259A8EA300B9B446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2756D00259A8EA300B9B446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2756D0A259A8EA300B9B446 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D2756D0C259A8EA300B9B446 /* TideWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideWatchApp.swift; sourceTree = "<group>"; };
+		D2756D0A259A8EA300B9B446 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D0C259A8EA300B9B446 /* TideWatchApp.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TideWatchApp.swift; sourceTree = "<group>"; tabWidth = 4; };
 		D2756D10259A8EA400B9B446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2756D13259A8EA400B9B446 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2756D15259A8EA400B9B446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2756D26259A8F8E00B9B446 /* Stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Stations.json; sourceTree = "<group>"; };
-		D2756D2B259A909600B9B446 /* MeasurementStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementStation.swift; sourceTree = "<group>"; };
-		D2756D30259A90EB00B9B446 /* CoOpsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoOpsApi.swift; sourceTree = "<group>"; };
-		D2756D3A259A97B300B9B446 /* TidePredictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidePredictions.swift; sourceTree = "<group>"; };
-		D2756D4A259AA1B900B9B446 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		D2756D52259AA50B00B9B446 /* TideDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideDataView.swift; sourceTree = "<group>"; };
-		D2756D57259AA7C000B9B446 /* TideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideType.swift; sourceTree = "<group>"; };
-		D2756D5F259AA82300B9B446 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		D2756D2B259A909600B9B446 /* MeasurementStation.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MeasurementStation.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D30259A90EB00B9B446 /* CoOpsApi.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CoOpsApi.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D3A259A97B300B9B446 /* TidePredictions.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TidePredictions.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D4A259AA1B900B9B446 /* Color+Extension.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D52259AA50B00B9B446 /* TideDataView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TideDataView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D57259AA7C000B9B446 /* TideType.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TideType.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D2756D5F259AA82300B9B446 /* ContentModel.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; tabWidth = 4; };
 		D2B2A5F2264717A80078863D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D2B2A5F4265A5C630078863D /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		D2B2A5F4265A5C630078863D /* Formatters.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,8 +303,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    for yml in ~/rogelj.swiftlint.yml\n    do\n        if [ -f $yml ]; then\n            swiftlint --no-cache --config $yml\n            break\n        fi\n    done\nfi\n\n";
+			shellPath = /bin/zsh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n    for yml in ~/.rogelj.swiftlint.yml\n    do\n        if [ -f $yml ]; then\n           swiftlint --no-cache --config $yml\n            break\n        else\n            echo \"No SwiftLint\"\n        fi\n    done\nelse \n    echo \"Nope\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
