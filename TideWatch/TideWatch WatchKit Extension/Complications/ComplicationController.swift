@@ -14,16 +14,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     func currentTimelineEntry(for complication: CLKComplication) async -> CLKComplicationTimelineEntry? {
-        guard complication.family == .circularSmall else {
+        guard complication.family == .graphicCircular, let tide = Tide.getCurrent() else {
             return nil
         }
 
-        let template = CLKComplicationTemplateGraphicCircularStackText(
-            line1TextProvider: .init(format: "Surf's"),
-            line2TextProvider: .init(format: "Up!")
+        let template = CLKComplicationTemplateGraphicCircularStackImage(
+            line1ImageProvider: .init(fullColorImage: tide.image()),
+            line2TextProvider: .init(format: tide.heightString())
         )
 
-        return .init(date: Date(), complicationTemplate: template)
+        return .init(date: tide.date, complicationTemplate: template)
     }
 
     func localizableSampleTemplate(for complication: CLKComplication) async -> CLKComplicationTemplate? {
