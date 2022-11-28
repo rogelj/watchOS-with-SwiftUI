@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464D490A2935066A00A510BA /* UrlDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464D49092935066A00A510BA /* UrlDownloader.swift */; };
 		46EA3A872935041D005934E9 /* BackgroundWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA3A862935041D005934E9 /* BackgroundWorker.swift */; };
 		D2AAAE1C272600630050D315 /* Updates.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D2AAAE1B272600630050D315 /* Updates.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2AAAE21272600650050D315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2AAAE20272600650050D315 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		464D49092935066A00A510BA /* UrlDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDownloader.swift; sourceTree = "<group>"; };
 		46EA3A862935041D005934E9 /* BackgroundWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundWorker.swift; sourceTree = "<group>"; };
 		D2AAAE17272600630050D315 /* Updates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Updates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AAAE1B272600630050D315 /* Updates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Updates.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				46EA3A862935041D005934E9 /* BackgroundWorker.swift */,
 				D2AAAE2B272600660050D315 /* ContentView.swift */,
 				D2AAAE47272600E30050D315 /* ExtensionDelegate.swift */,
+				464D49092935066A00A510BA /* UrlDownloader.swift */,
 				D2AAAE2D272600660050D315 /* UpdatesApp.swift */,
 				D2ECDD5B2726165B0055756D /* Weather.swift */,
 				D2AAAE31272600670050D315 /* Assets.xcassets */,
@@ -349,6 +352,7 @@
 				D2ECDD5C2726165B0055756D /* Weather.swift in Sources */,
 				D2D9EA1C272F52D8008F09A2 /* ComplicationTemplateFactory.swift in Sources */,
 				D2D9EA2E272F52E6008F09A2 /* GraphicCorner.swift in Sources */,
+				464D490A2935066A00A510BA /* UrlDownloader.swift in Sources */,
 				D2D9EA2C272F52E6008F09A2 /* GraphicCircular.swift in Sources */,
 				D2AAAE2C272600660050D315 /* ContentView.swift in Sources */,
 				D2D9EA27272F52E6008F09A2 /* CircularSmall.swift in Sources */,
