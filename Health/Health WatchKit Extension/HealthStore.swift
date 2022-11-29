@@ -19,5 +19,32 @@ final class HealthStore {
     }
 
     healthStore = HKHealthStore()
+
+    Task {
+      try await healthStore!.requestAuthorization(toShare: [brushingCategoryType],
+                                                  read: [brushingCategoryType])
+    }
   }
+
+  private func save(_ sample: HKSample) async throws {
+    guard let healthStore = healthStore else {
+      throw HKError(.errorHealthDataUnavailable)
+    }
+
+    let _: Bool = try await withCheckedThrowingContinuation {
+      continuation in
+
+      healthStore.save(sample) { _, error in
+        if let error = error {
+          continuation.resume(throwing: error)
+          return
+        }
+
+        continuation.resume(returning: true)
+      }
+    }
+  }
+
+  private let brushingCategoryType = HKCategoryType.categoryType(forIdentifier: .toothbrushingEvent)!
+
 }
