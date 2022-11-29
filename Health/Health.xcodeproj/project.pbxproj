@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46D4C72D293665D900393DDD /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D4C72C293665D900393DDD /* HealthStore.swift */; };
 		D28CD90326EEA5AD00A1DE0F /* Health WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D28CD90226EEA5AD00A1DE0F /* Health WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D28CD90826EEA5AE00A1DE0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28CD90726EEA5AE00A1DE0F /* Assets.xcassets */; };
 		D28CD90E26EEA5AF00A1DE0F /* Health WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D28CD90D26EEA5AF00A1DE0F /* Health WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		46D4C72B2936632B00393DDD /* Health WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		46D4C72C293665D900393DDD /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		D28CD8FE26EEA5AC00A1DE0F /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28CD90226EEA5AD00A1DE0F /* Health WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28CD90726EEA5AE00A1DE0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				D28CD92B26EEA5C000A1DE0F /* Teeth */,
 				D28CD93626EEA65200A1DE0F /* Water */,
 				D28CD94226EEC72100A1DE0F /* Notification.Name+Extension.swift */,
+				46D4C72C293665D900393DDD /* HealthStore.swift */,
 			);
 			path = "Health WatchKit Extension";
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				D28CD93126EEA5F100A1DE0F /* BrushingModel.swift in Sources */,
 				D28CD91526EEA5AF00A1DE0F /* HealthApp.swift in Sources */,
 				D28CD91726EEA5AF00A1DE0F /* ComplicationController.swift in Sources */,
+				46D4C72D293665D900393DDD /* HealthStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
