@@ -1,4 +1,5 @@
 import SwiftUI
+import AuthenticationServices
 
 struct SignInView: View {
   @AppStorage("userName") private var storedUserName = ""
@@ -10,6 +11,12 @@ struct SignInView: View {
     ScrollView {
       Text("This action requires you to be signed in.")
         .font(.body)
+
+      SignInWithAppleButton(onRequest: onRequest, onCompletion: siwaCompletion)
+        .signInWithAppleButtonStyle(.white)
+
+      Divider()
+        .padding()
       
       PasswordView(
         userName: storedUserName,
@@ -29,6 +36,14 @@ struct SignInView: View {
       onSignedIn("some token here")
       dismiss()
     }
+  }
+
+  private func onRequest(request: ASAuthorizationAppleIDRequest) {
+
+  }
+
+  private func siwaCompletion(result: Result<ASAuthorization, Error>) {
+
   }
 }
 
