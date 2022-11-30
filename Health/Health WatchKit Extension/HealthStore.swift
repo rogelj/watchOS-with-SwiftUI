@@ -83,4 +83,77 @@ final class HealthStore {
     try await save(sample)
   }
 
+  // Determine current body mass
+  private func currentBodyMass() async throws -> Double? {
+    guard let healthStore = healthStore else {
+      throw HKError(.errorHealthDataUnavailable)
+    }
+
+    let sort = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+
+    return try await withCheckedThrowingContinuation { continuation in
+      let query = HKSampleQuery(sampleType: bodyMassType, predicate: nil, limit: 1, sortDescriptors: [sort]) { _, samples, _ in
+        guard let latest = samples?.first as? HKQuantitySample else {
+          continuation.resume(returning: nil)
+          return
+        }
+
+        let pounds = latest.quantity.doubleValue(for: .pound())
+        continuation.resume(returning: pounds)
+      }
+
+      healthStore.execute(query)
+    }
+  }
+
+  // How much water has been drunk today
+  private func drankToday() async throws -> (
+    ounces: Double,
+    amount: Measurement<UnitVolume>
+  ) {
+    guard let healthStore = healthStore else {
+      throw HKError(.errorHealthDataUnavailable)
+    }
+
+    let start = Calendar.current.startOfDay(for: Date.now)
+
+    let predicate = HKQuery.predicateForSamples(withStart: start, end: Date.now, options: .strictStartDate)
+
+    return try await withCheckedThrowingContinuation { continuation in
+      let query = HKStatisticsQuery(quantityType: waterQuantityType,
+                                    quantitySamplePredicate: predicate,
+                                    options: .cumulativeSum
+      ) {
+        _, statistics, _ in
+        guard let quantity = statistics?.sumQuantity() else {
+          continuation.resume(returning: (0, .init(value: 0, unit: .liters))
+          )
+          return
+        }
+
+        let ounces = quantity.doubleValue(for: .fluidOunceUS())
+        let liters = quantity.doubleValue(for: .liter())
+
+        continuation.resume(returning: (ounces, .init(value: liters, unit: .liters))
+        )
+      }
+
+      healthStore.execute(query)
+    }
+  }
+
+  // what to display in terms of water consumption
+  func currentWaterStatus() async throws -> (Measurement<UnitVolume>, Double?) {
+    let (ounces, measurement) = try await drankToday()
+
+    guard let mass = try? await currentBodyMass() else {
+      return (measurement, nil)
+    }
+
+    let goal = mass / 2.0
+    let percentComplete = ounces / goal
+
+    return (measurement, percentComplete)
+  }
+
 }
