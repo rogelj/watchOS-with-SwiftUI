@@ -1,15 +1,17 @@
-//
-//  HealthStore.swift
-//  Health WatchKit Extension
-//
-//  Created by J Rogel PhD on 29/11/2022.
-//  Copyright © 2022 Ray Wenderlich. All rights reserved.
-//
+  //
+  //  HealthStore.swift
+  //  Health WatchKit Extension
+  //
+  //  Created by J Rogel PhD on 29/11/2022.
+  //  Copyright © 2022 Ray Wenderlich. All rights reserved.
+  //
 
 import Foundation
 import HealthKit
 
 final class HealthStore {
+  private var preferredWaterUnit = HKUnit.fluidOunceUS()
+
   static let shared = HealthStore()
   private var healthStore: HKHealthStore?
 
@@ -23,6 +25,12 @@ final class HealthStore {
     Task {
       try await healthStore!.requestAuthorization(toShare: [brushingCategoryType, waterQuantityType],
                                                   read: [brushingCategoryType, waterQuantityType, bodyMassType])
+
+      guard let types = try? await healthStore!.preferredUnits(for: [waterQuantityType]) else {
+        return
+      }
+
+      preferredWaterUnit = types[waterQuantityType]!
 
       await MainActor.run {
         NotificationCenter.default.post(name:.healthStoreLoaded, object: nil)
@@ -83,7 +91,7 @@ final class HealthStore {
     try await save(sample)
   }
 
-  // Determine current body mass
+    // Determine current body mass
   private func currentBodyMass() async throws -> Double? {
     guard let healthStore = healthStore else {
       throw HKError(.errorHealthDataUnavailable)
@@ -106,7 +114,7 @@ final class HealthStore {
     }
   }
 
-  // How much water has been drunk today
+    // How much water has been drunk today
   private func drankToday() async throws -> (
     ounces: Double,
     amount: Measurement<UnitVolume>
@@ -142,7 +150,7 @@ final class HealthStore {
     }
   }
 
-  // what to display in terms of water consumption
+    // what to display in terms of water consumption
   func currentWaterStatus() async throws -> (Measurement<UnitVolume>, Double?) {
     let (ounces, measurement) = try await drankToday()
 
@@ -154,6 +162,61 @@ final class HealthStore {
     let percentComplete = ounces / goal
 
     return (measurement, percentComplete)
+  }
+
+  func waterConsumptionGraphData(completion: @escaping ([WaterGraphData]?) -> Void) throws {
+    guard let healthStore = healthStore else {
+      throw HKError(.errorHealthDataUnavailable)
+    }
+    var start = Calendar.current.date(byAdding: .day, value: -6, to: Date.now)!
+    start = Calendar.current.startOfDay(for: start)
+
+    let predicate = HKQuery.predicateForSamples(withStart: start, end: nil, options: .strictStartDate)
+
+    let query = HKStatisticsCollectionQuery(quantityType: waterQuantityType, quantitySamplePredicate: predicate,
+                                            options: .cumulativeSum, anchorDate: start, intervalComponents: .init(day: 1)
+    )
+
+    query.initialResultsHandler = { _, results, _ in
+      self.updateGraph(start: start, results: results, completion: completion)
+    }
+
+    query.statisticsUpdateHandler = { _, _, results, _ in
+      self.updateGraph(start: start, results: results, completion: completion)
+    }
+
+    healthStore.execute(query)
+  }
+
+  func updateGraph(start: Date, results: HKStatisticsCollection?, completion: @escaping ([WaterGraphData]?) -> Void ) {
+    guard let results = results else {
+      return
+    }
+
+    var statsForDay: [Date: WaterGraphData] = [:]
+
+    for i in 0...6 {
+      let day = Calendar.current.date(byAdding: .day, value: i, to: start)!
+      statsForDay[day] = WaterGraphData(for: day)
+    }
+
+    results.enumerateStatistics(from: start, to: Date.now) { statistic, _ in
+      var value = 0.0
+
+      if let sum = statistic.sumQuantity() {
+        value = sum
+          .doubleValue(for: self.preferredWaterUnit)
+          .rounded(.up)
+      }
+
+      statsForDay[statistic.startDate]?.value = value
+    }
+
+    let statistics = statsForDay
+      .sorted { $0.key < $1.key }
+      .map { $0.value }
+
+    completion(statistics)
   }
 
 }

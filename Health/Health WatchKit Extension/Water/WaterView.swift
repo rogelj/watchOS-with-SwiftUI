@@ -12,6 +12,7 @@ import HealthKit
 struct WaterView: View {
   @State private var consumed = ""
   @State private var percent = ""
+  @State private var graphData: [WaterGraphData]?
 
   var body: some View {
     ScrollView {
@@ -39,6 +40,9 @@ struct WaterView: View {
             Text(percent)
               .font(.body)
           }
+
+          BarChart(data: graphData)
+            .padding()
         } else {
           Text("Please enable water tracking in Apple Health.")
         }
@@ -46,6 +50,9 @@ struct WaterView: View {
     }
     .task {
       await updateStatus()
+      try? HealthStore.shared.waterConsumptionGraphData() {
+        self.graphData = $0
+      }
     }
   }
 
