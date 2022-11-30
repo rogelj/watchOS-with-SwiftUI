@@ -47,4 +47,17 @@ final class HealthStore {
 
   private let brushingCategoryType = HKCategoryType.categoryType(forIdentifier: .toothbrushingEvent)!
 
+  func logBrushing(startDate: Date) async throws {
+    let status = healthStore?.authorizationStatus(for: brushingCategoryType)
+
+    guard status == .sharingAuthorized else {
+      return
+    }
+
+    let sample = HKCategorySample(type: brushingCategoryType, value: HKCategoryValue.notApplicable.rawValue,
+                                  start: startDate, end: Date.now)
+
+    try await save(sample)
+  }
+
 }

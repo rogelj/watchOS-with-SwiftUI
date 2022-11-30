@@ -33,7 +33,7 @@ class BrushingModel: NSObject, ObservableObject {
 
 extension BrushingModel: WKExtendedRuntimeSessionDelegate {
   func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
-    let secondsPerRound = 30.0
+    let secondsPerRound = 2.0
     
     started = Date.now
     endOfRound = started.addingTimeInterval(secondsPerRound)
@@ -59,8 +59,11 @@ extension BrushingModel: WKExtendedRuntimeSessionDelegate {
       
       device.play(.success)
       device.play(.success)
-      
-      self.session.invalidate()
+
+      Task {
+        try? await HealthStore.shared.logBrushing(startDate: self.started)
+        self.session.invalidate()
+      }
     }
     
     RunLoop.main.add(timer, forMode: .common)
