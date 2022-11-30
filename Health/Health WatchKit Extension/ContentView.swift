@@ -1,21 +1,42 @@
 import SwiftUI
 import ClockKit
+import HealthKit
 
 struct ContentView: View {
   @State private var wantsToBrush = false
   @State private var isGettingReady = false
+  @State private var wantsToDrink = false
+  @State private var waitingForHealthKit = false
+
+  private let healthStoreLoaded = NotificationCenter.default.publisher(for: .healthStoreLoaded)
 
   private let stopBrushing = NotificationCenter.default.publisher(for: .dismissSheets)
 
   var body: some View {
     VStack {
-      Button("Brush") {
-        isGettingReady.toggle()
+      if waitingForHealthKit {
+        Text("Waiting for HealthKit prompt.")
+      } else {
+        Button("Brush") {
+          isGettingReady.toggle()
+        }
+
+        if HealthStore.shared.isWaterEnabled {
+          Button {
+            wantsToDrink.toggle()
+          } label: {
+            Image(systemName: "drop.fill")
+              .foregroundColor(.blue)
+          }
+        }
       }
     }
     .padding()
     .sheet(isPresented: $wantsToBrush) {
       BrushingTimerView()
+    }
+    .sheet(isPresented: $wantsToDrink) {
+      WaterView()
     }
     .overlay(
       VStack {
@@ -34,6 +55,11 @@ struct ContentView: View {
       isGettingReady = false
       wantsToBrush = false
     }
+    .onReceive(healthStoreLoaded) { _ in
+      self.waitingForHealthKit = false
+    }
+
+
   }
 }
 

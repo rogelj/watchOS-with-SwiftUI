@@ -23,6 +23,10 @@ final class HealthStore {
     Task {
       try await healthStore!.requestAuthorization(toShare: [brushingCategoryType, waterQuantityType],
                                                   read: [brushingCategoryType, waterQuantityType, bodyMassType])
+
+      await MainActor.run {
+        NotificationCenter.default.post(name:.healthStoreLoaded, object: nil)
+      }
     }
   }
 

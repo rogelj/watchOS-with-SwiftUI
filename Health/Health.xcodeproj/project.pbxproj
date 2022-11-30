@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4645CE5B29376A1700910A31 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645CE5A29376A1700910A31 /* WaterView.swift */; };
 		46D4C72D293665D900393DDD /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D4C72C293665D900393DDD /* HealthStore.swift */; };
 		46D4C73029366E8600393DDD /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 46D4C72E29366E1C00393DDD /* SwiftUICharts */; };
 		D28CD90326EEA5AD00A1DE0F /* Health WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D28CD90226EEA5AD00A1DE0F /* Health WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4645CE5A29376A1700910A31 /* WaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		46A314E42936700600901BEC /* Health WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health WatchKit App.entitlements"; sourceTree = "<group>"; };
 		46D4C72B2936632B00393DDD /* Health WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Health WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
 		46D4C72C293665D900393DDD /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D28CD94A26EEF56900A1DE0F /* BarChart.swift */,
+				4645CE5A29376A1700910A31 /* WaterView.swift */,
 				D28CD94626EED4BA00A1DE0F /* LogWaterButton.swift */,
 				D28CD94C26EEF58100A1DE0F /* WaterGraphData.swift */,
 			);
@@ -274,6 +277,7 @@
 				D28CD94726EED4BA00A1DE0F /* LogWaterButton.swift in Sources */,
 				D28CD94B26EEF56900A1DE0F /* BarChart.swift in Sources */,
 				D28CD93326EEA60D00A1DE0F /* BrushingTimerView.swift in Sources */,
+				4645CE5B29376A1700910A31 /* WaterView.swift in Sources */,
 				D28CD94326EEC72100A1DE0F /* Notification.Name+Extension.swift in Sources */,
 				D28CD93526EEA64200A1DE0F /* GetReadyView.swift in Sources */,
 				D28CD91326EEA5AF00A1DE0F /* ContentView.swift in Sources */,
