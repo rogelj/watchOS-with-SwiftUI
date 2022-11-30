@@ -64,4 +64,19 @@ final class HealthStore {
 
   private let bodyMassType = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
 
+  var isWaterEnabled: Bool {
+    let status = healthStore?.authorizationStatus(for: waterQuantityType)
+    return status == .sharingAuthorized
+  }
+
+  func logWater(quantity: HKQuantity) async throws {
+    guard isWaterEnabled else {
+      return
+    }
+
+    let sample = HKQuantitySample(type: waterQuantityType, quantity: quantity, start: Date.now, end: Date.now)
+
+    try await save(sample)
+  }
+
 }
