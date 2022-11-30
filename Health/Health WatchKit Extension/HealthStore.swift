@@ -21,8 +21,8 @@ final class HealthStore {
     healthStore = HKHealthStore()
 
     Task {
-      try await healthStore!.requestAuthorization(toShare: [brushingCategoryType],
-                                                  read: [brushingCategoryType])
+      try await healthStore!.requestAuthorization(toShare: [brushingCategoryType, waterQuantityType],
+                                                  read: [brushingCategoryType, waterQuantityType, bodyMassType])
     }
   }
 
@@ -59,5 +59,9 @@ final class HealthStore {
 
     try await save(sample)
   }
+
+  private let waterQuantityType = HKQuantityType.quantityType(forIdentifier: .dietaryWater)!
+
+  private let bodyMassType = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
 
 }
